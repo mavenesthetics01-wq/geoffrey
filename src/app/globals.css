@@ -37,6 +37,10 @@
 ======================================== */
 
 @theme {
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1700px;
+  --breakpoint-4xl: 1900px;
+  
   --font-sans: "Trade Gothic LT Std", sans-serif;
   --font-zapf: "Zapf Humanist 601", sans-serif;
 }

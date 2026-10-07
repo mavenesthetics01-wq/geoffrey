@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+/* ========================================
+   CUSTOM FONTS
+======================================== */
+
+/* PRIMARY — Zapf Humanist 601 */
+@font-face {
+  font-family: "Zapf Humanist 601";
+  src: url("/fonts/ZapfHumanist601.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* SECONDARY — Trade Gothic LT Std Regular */
+@font-face {
+  font-family: "Trade Gothic LT Std";
+  src: url("/fonts/TradeGothicLTStdRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* SECONDARY — Trade Gothic LT Std Bold */
+@font-face {
+  font-family: "Trade Gothic LT Std";
+  src: url("/fonts/TradeGothicLTStdBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ========================================
+   TAILWIND THEME
+======================================== */
+
+@theme {
+  --font-sans: "Trade Gothic LT Std", sans-serif;
+  --font-zapf: "Zapf Humanist 601", sans-serif;
+}
+
+
+/* ========================================
+   ROOT & BODY
+======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #280C24;
+  color: #f6f2f5;
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* ========================================
+   BOX SIZING
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   GEOFFREY VAZ BRAND COLORS
+======================================== */
+
+:root {
+  --gv-gradient-primary: linear-gradient(
+    93.88deg,
+    #A4649D 1.17%,
+    #57337D 53.32%,
+    #5C1559 80.34%
+  );
+
+  --gv-gradient-secondary: linear-gradient(
+    93.88deg,
+    #B74DAA 1.17%,
+    #E9C1E4 80.34%
+  );
+
+  --gv-gradient-plum: linear-gradient(
+    189.16deg,
+    #280C24 4.78%,
+    #E9C1E4 95.78%
+  );
+
+  --gv-brand-white: #FFFFFF;
+  --gv-brand-pink: #E9C1E4;
+  --gv-brand-purple: #57337D;
+  --gv-brand-magenta: #B74DAA;
+
+  --gv-text-primary: #FFFFFF;
+  --gv-text-accent-start: #B74DAA;
+  --gv-text-accent-end: #E9C1E4;
+  --gv-text-dark: #280C24;
+}
+
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+/* PRIMARY FONT */
+.font-zapf {
+  font-family: "Zapf Humanist 601", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+/* SECONDARY FONT */
+.font-sans {
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* SECONDARY FONT — BOLD */
+.font-sans.font-bold {
+  font-family: "Trade Gothic LT Std", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+/* ========================================
+   GRADIENT TEXT
+======================================== */
+
+.gv-text-gradient {
+  background: linear-gradient(
+    93.88deg,
+    var(--gv-text-accent-start) 1.17%,
+    var(--gv-text-accent-end) 80.34%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* ========================================
+   LINKS
+======================================== */
+
+a {
+  text-decoration: none;
+}
+
+
+/* ========================================
+   TEXT SELECTION
+======================================== */
+
+::selection {
+  background: #B74DAA;
+  color: #FFFFFF;
+}
+
+
+/* ========================================
+   FORM FIELDS
+======================================== */
+
+.form-field {
+  width: 100%;
+  border: 1px solid rgba(233, 193, 228, 0.45);
+  border-radius: 0;
+  background: #35102f;
+  padding: 1rem;
+  color: #fff;
+  font: inherit;
+  outline: none;
+}
+
+.form-field:focus {
+  border-color: #E9C1E4;
+  box-shadow: 0 0 0 1px #E9C1E4;
+}
+
+.form-field::placeholder {
+  color: rgba(233, 193, 228, 0.72);
+}
+
+select.form-field option {
+  background: #35102f;
+  color: white;
+}
+
+/* @keyframes media-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-media-scroll {
+  animation: media-scroll 28s linear infinite;
+  will-change: transform;
+} */
+
+@keyframes media-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-media-scroll {
+  animation: media-scroll 30s linear infinite;
+  will-change: transform;
+}

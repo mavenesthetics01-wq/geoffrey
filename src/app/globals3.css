@@ -1,0 +1,466 @@
+
+@import "tailwindcss";
+
+/* ========================================
+   CUSTOM FONTS
+======================================== */
+
+/*
+  PRIMARY FONT
+  Zapf Humanist 601
+*/
+
+@font-face {
+  font-family: "Zapf Humanist 601";
+  src: url("/fonts/Zapf Humanist 601 Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+  SECONDARY FONT
+  Trade Gothic LT Std
+*/
+
+@font-face {
+  font-family: "Trade Gothic LT Std";
+  src: url("/fonts/TradeGothicLTStdRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Trade Gothic LT Std";
+  src: url("/fonts/TradeGothicLTStdBold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
+   TAILWIND THEME
+======================================== */
+
+@theme {
+  /*
+    Primary / Heading font
+  */
+  --font-zapf: "Zapf Humanist 601", sans-serif;
+
+  /*
+    Display / Heading font
+  */
+  --font-display: "Zapf Humanist 601", sans-serif;
+
+  /*
+    Body / Secondary font
+  */
+  --font-sans: "Trade Gothic LT Std", sans-serif;
+}
+
+/* ========================================
+   ROOT
+======================================== */
+
+:root {
+  /* Typography */
+  --font-primary: "Zapf Humanist 601", sans-serif;
+  --font-secondary: "Trade Gothic LT Std", sans-serif;
+
+  /* ======================================
+     GEOFFREY VAZ BRAND COLORS
+  ====================================== */
+
+  --gv-gradient-primary: linear-gradient(
+    93.88deg,
+    #A4649D 1.17%,
+    #57337D 53.32%,
+    #5C1559 80.34%
+  );
+
+  --gv-gradient-secondary: linear-gradient(
+    93.88deg,
+    #B74DAA 1.17%,
+    #E9C1E4 80.34%
+  );
+
+  --gv-gradient-plum: linear-gradient(
+    189.16deg,
+    #280C24 4.78%,
+    #E9C1E4 95.78%
+  );
+
+  /* Brand colors */
+
+  --gv-brand-white: #FFFFFF;
+
+  --gv-brand-pink: #E9C1E4;
+
+  --gv-brand-purple: #57337D;
+
+  --gv-brand-magenta: #B74DAA;
+
+  /* Text colors */
+
+  --gv-text-primary: #FFFFFF;
+
+  --gv-text-accent-start: #B74DAA;
+
+  --gv-text-accent-end: #E9C1E4;
+
+  --gv-text-dark: #280C24;
+}
+
+/* ========================================
+   HTML
+======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+  margin: 0;
+
+  background: #280C24;
+
+  color: #f6f2f5;
+
+  /*
+    Default / body font
+    Trade Gothic LT Std
+  */
+  font-family: var(--font-secondary);
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+
+/* ========================================
+   GLOBAL BOX SIZING
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   PRIMARY FONT
+   Zapf Humanist 601
+======================================== */
+
+/*
+  Use for:
+  - GEOFFREY VAZ
+  - Section headings
+  - Main headings
+  - Display typography
+  - Figma heading typography
+*/
+
+.font-zapf {
+  font-family: var(--font-primary);
+  font-style: normal;
+}
+
+/* ========================================
+   DISPLAY FONT
+   Zapf Humanist 601
+======================================== */
+
+.font-display {
+  font-family: var(--font-primary);
+  font-style: normal;
+}
+
+/* ========================================
+   SECONDARY FONT
+   Trade Gothic LT Std
+======================================== */
+
+/*
+  Use for:
+  - Body text
+  - Navigation
+  - Buttons
+  - Labels
+  - Descriptions
+  - Experience text
+*/
+
+.font-sans {
+  font-family: var(--font-secondary);
+  font-style: normal;
+}
+
+/* ========================================
+   TRADE GOTHIC FONT WEIGHTS
+======================================== */
+
+.font-sans.font-bold {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+}
+
+/* ========================================
+   GRADIENT TEXT
+======================================== */
+
+.gv-text-gradient {
+  background: linear-gradient(
+    93.88deg,
+    var(--gv-text-accent-start) 1.17%,
+    var(--gv-text-accent-end) 80.34%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* ========================================
+   TEXT SELECTION
+======================================== */
+
+::selection {
+  background: #B74DAA;
+  color: #FFFFFF;
+}
+
+/* ========================================
+   FORM FIELDS
+======================================== */
+
+.form-field {
+  width: 100%;
+
+  border: 1px solid rgba(233, 193, 228, 0.45);
+
+  border-radius: 0;
+
+  background: #35102f;
+
+  padding: 1rem;
+
+  color: #fff;
+
+  /*
+    Inherit Trade Gothic from body
+  */
+  font-family: var(--font-secondary);
+
+  font-size: inherit;
+
+  font-weight: 400;
+
+  outline: none;
+}
+
+/* ========================================
+   FORM FIELD FOCUS
+======================================== */
+
+.form-field:focus {
+  border-color: #E9C1E4;
+
+  box-shadow: 0 0 0 1px #E9C1E4;
+}
+
+/* ========================================
+   FORM PLACEHOLDER
+======================================== */
+
+.form-field::placeholder {
+  color: rgba(233, 193, 228, 0.72);
+}
+
+/* ========================================
+   SELECT OPTION
+======================================== */
+
+select.form-field option {
+  background: #35102f;
+
+  color: white;
+
+  font-family: var(--font-secondary);
+}
+
+/* ========================================
+   LINKS
+======================================== */
+
+a {
+  text-decoration: none;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+button {
+  font-family: var(--font-secondary);
+}
+
+/* ========================================
+   IMAGES
+======================================== */
+
+img {
+  max-width: 100%;
+}
+
+/* ========================================
+   HEADINGS
+======================================== */
+
+/*
+  Keep heading font controlled by Tailwind
+  classes such as font-zapf / font-display.
+
+  Do NOT globally force headings here,
+  because some components may intentionally
+  use another font.
+*/
+
+/* ========================================
+   GEOFFREY VAZ COMMON UTILITIES
+======================================== */
+
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+/* ========================================
+   PRIMARY FONT WEIGHT
+======================================== */
+
+.font-primary {
+  font-weight: 400;
+}
+
+/* ========================================
+   RESPONSIVE TEXT RENDERING
+======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block-start: 0;
+}
+
+/* ========================================
+   SMOOTH FONT RENDERING
+======================================== */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   GEOFFREY VAZ SECTION BACKGROUND
+======================================== */
+
+.gv-dark-bg {
+  background: #03091b;
+}
+
+.gv-plum-bg {
+  background: #280C24;
+}
+
+/* ========================================
+   GEOFFREY VAZ ACCENT
+======================================== */
+
+.gv-accent {
+  color: #EAA274;
+}
+
+/* ========================================
+   GEOFFREY VAZ PINK
+======================================== */
+
+.gv-pink {
+  color: #E9C1E4;
+}
+
+/* ========================================
+   GEOFFREY VAZ PURPLE
+======================================== */
+
+.gv-purple {
+  color: #57337D;
+}
+
+/* ========================================
+   GEOFFREY VAZ MAGENTA
+======================================== */
+
+.gv-magenta {
+  color: #B74DAA;
+}
+
+/* ========================================
+   GRADIENT BACKGROUNDS
+======================================== */
+
+.gv-gradient-primary {
+  background: var(--gv-gradient-primary);
+}
+
+.gv-gradient-secondary {
+  background: var(--gv-gradient-secondary);
+}
+
+.gv-gradient-plum {
+  background: var(--gv-gradient-plum);
+}
+
+/* ========================================
+   GRADIENT TEXT — PINK
+======================================== */
+
+.gv-gradient-text {
+  background: var(--gv-gradient-secondary);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========================================
+   MOBILE / TOUCH
+======================================== */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+:focus-visible {
+  outline: 2px solid #E9C1E4;
+  outline-offset: 3px;
+}

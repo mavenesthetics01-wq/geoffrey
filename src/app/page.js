@@ -366,11 +366,11 @@ export default function HomePage() {
     {/* Main heading */}
     <div className="relative">
       <div className="relative">
-        <h1 className="relative z-10 whitespace-nowrap font-zapf text-[clamp(34px,18vw,82px)] font-medium uppercase leading-[0.95] tracking-normal text-white md:text-[131px] md:leading-[124px]">
+        <h1 className="relative z-10 whitespace-nowrap font-zapf text-[clamp(34px,14vw,82px)] font-medium uppercase leading-[0.95] tracking-normal text-white md:text-[131px] md:leading-[124px]">
           GEOFFREY
         </h1>
 
-        <span className="absolute left-[79%] top-[68%] z-0 whitespace-nowrap bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text font-zapf text-[clamp(45px,13vw,68px)] font-medium uppercase leading-[1.13] tracking-normal text-transparent md:left-[64%] md:top-[62%] md:text-[clamp(42px,7.16vw,110px)] 3xl:left-[55%] 4xl:left-[49%]">
+        <span className="absolute left-[62%] top-[65%] z-0 whitespace-nowrap bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text font-zapf text-[clamp(45px,10vw,68px)] font-medium uppercase leading-[1.13] tracking-normal text-white md:left-[64%] md:top-[62%] md:text-[clamp(42px,7.16vw,110px)] md:text-transparent 3xl:left-[55%] 4xl:left-[49%]">
           VAZ
         </span>
       </div>
@@ -378,7 +378,7 @@ export default function HomePage() {
 
     {/* Subtitle */}
     <div className="relative z-10 mt-6 md:mt-10">
-      <h2 className="bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text font-zapf text-[clamp(24px,7vw,44px)] leading-[1.15] text-transparent md:text-4xl md:leading-[1.25] lg:text-[3rem]">
+      <h2 className="bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text font-zapf text-[clamp(24px,6vw,44px)] leading-[1.15] text-transparent md:text-4xl md:leading-[1.25] lg:text-[3rem]">
         MD Dermatologist
         <br />
         &amp; Medical Aesthetics Expert

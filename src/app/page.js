@@ -28,6 +28,33 @@ const photos = {
   trainingVideo: "/videos/training.mp4",
 };
 
+const consultationTreatments = [
+  "Skin Rejuvenation",
+  "Wrinkle Reduction",
+  "Exfoliating Peels",
+  "Scar Reduction",
+  "Micro Needling Radio Frequency (MNRF)",
+  "Post-Burn Scars",
+  "Migraine Treatment",
+  "Undereye Hollowness",
+  "Non-Invasive Rhinoplasty",
+  "Skin Whitening",
+  "Face Contouring",
+  "High Cheek Lift",
+  "Chin Contouring",
+  "Thread Lift",
+  "Laser Tattoo Removal",
+  "Skin Tightening",
+  "Hand Rejuvenation",
+  "Forehead Smoothening",
+  "Gummy Smile Reduction",
+  "Laser Hair Reduction",
+  "Brow Lift",
+  "Earlobe Repair",
+  "Ingrown Toe Nail Repair",
+  "Ingrown Nail Repair",
+];
+
 const mediaLogos = [
   { src: "/brands/vogue.png", alt: "Vogue" },
   { src: "/brands/peaklife.png", alt: "PeakLife" },
@@ -194,6 +221,7 @@ const regenTreatments = [
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [consultOpen, setConsultOpen] = useState(false);
   // const [formSent, setFormSent] = useState(false);
   const trackRef = useRef(null);
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -203,6 +231,15 @@ export default function HomePage() {
   const [openSkinAccordion, setOpenSkinAccordion] = useState(null);
   const [openDermatAccordion, setOpenDermatAccordion] = useState(null);
   const [openRegenAccordion, setOpenRegenAccordion] = useState(null);
+
+  useEffect(() => {
+    if (!consultOpen) return;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setConsultOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [consultOpen]);
 
   const moveCarousel = (direction) => {
     if (!trackRef.current) return;
@@ -353,9 +390,9 @@ export default function HomePage() {
       </p>
 
       {/* Consultation */}
-      <a href="#consult" className="mt-3 inline-flex h-[40px] w-[170px] items-center justify-center bg-white px-3 py-3 font-sans text-[14px] font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 sm:h-[57px] sm:w-[280px] sm:px-9 sm:py-5 sm:text-sm">
+      <button type="button" onClick={() => setConsultOpen(true)} className="mt-3 inline-flex h-[40px] w-[170px] items-center justify-center bg-white px-3 py-3 font-sans text-[14px] font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 sm:h-[57px] sm:w-[280px] sm:px-9 sm:py-5 sm:text-sm">
         Book Consultation
-      </a>
+      </button>
     </div>
   </div>
 
@@ -368,6 +405,59 @@ export default function HomePage() {
 
 
 </section>
+
+{consultOpen && (
+  <div
+    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-sm"
+    onMouseDown={(event) => {
+      if (event.target === event.currentTarget) setConsultOpen(false);
+    }}
+  >
+    <section
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="consultation-title"
+      className="relative max-h-[90svh] w-full max-w-[760px] overflow-y-auto rounded-2xl border border-[#B74DAA]/40 bg-[#280C24] px-5 py-8 text-white shadow-2xl shadow-black/40 sm:px-10 sm:py-10"
+    >
+      <button
+        type="button"
+        onClick={() => setConsultOpen(false)}
+        aria-label="Close consultation form"
+        className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition hover:bg-[#B74DAA]/40"
+      >
+        ×
+      </button>
+      <div className="text-center">
+        <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[#D88ACD]">Let’s connect</p>
+        <h2 id="consultation-title" className="mt-3 font-zapf text-3xl sm:text-4xl">Book a <span className="text-[#D88ACD]">Consultation</span></h2>
+        <p className="mx-auto mt-4 max-w-xl font-sans text-sm leading-relaxed text-white/65 sm:text-base">Share a few details and our team will reach out to schedule your consultation.</p>
+      </div>
+      <form onSubmit={(event) => event.preventDefault()} className="mt-8 grid grid-cols-1 gap-x-5 gap-y-5 sm:grid-cols-2">
+        <label className="font-sans text-xs uppercase tracking-wider text-white/75">Full name <span className="text-[#D88ACD]">*</span>
+          <input required name="name" autoComplete="name" placeholder="Your name" className="mt-2 h-12 w-full rounded-lg border border-white/20 bg-white/[0.08] px-4 text-base normal-case tracking-normal text-white outline-none placeholder:text-white/35 focus:border-[#D88ACD]" />
+        </label>
+        <label className="font-sans text-xs uppercase tracking-wider text-white/75">Email
+          <input type="email" name="email" autoComplete="email" placeholder="you@example.com" className="mt-2 h-12 w-full rounded-lg border border-white/20 bg-white/[0.08] px-4 text-base normal-case tracking-normal text-white outline-none placeholder:text-white/35 focus:border-[#D88ACD]" />
+        </label>
+        <label className="font-sans text-xs uppercase tracking-wider text-white/75">Phone <span className="text-[#D88ACD]">*</span>
+          <input required type="tel" name="phone" autoComplete="tel" placeholder="Your phone number" className="mt-2 h-12 w-full rounded-lg border border-white/20 bg-white/[0.08] px-4 text-base normal-case tracking-normal text-white outline-none placeholder:text-white/35 focus:border-[#D88ACD]" />
+        </label>
+        <label className="font-sans text-xs uppercase tracking-wider text-white/75">Service of interest <span className="text-[#D88ACD]">*</span>
+          <select required name="service" defaultValue="" className="mt-2 h-12 w-full rounded-lg border border-white/20 bg-[#40163B] px-4 text-base normal-case tracking-normal text-white outline-none focus:border-[#D88ACD]">
+            <option value="" disabled>Select a treatment</option>
+            {consultationTreatments.map((treatment) => <option key={treatment} value={treatment}>{treatment}</option>)}
+          </select>
+        </label>
+        <label className="font-sans text-xs uppercase tracking-wider text-white/75 sm:col-span-2">Your concern
+          <textarea name="concern" rows="3" placeholder="Tell us a little about what you would like to address..." className="mt-2 w-full resize-y rounded-lg border border-white/20 bg-white/[0.08] px-4 py-3 text-base normal-case tracking-normal text-white outline-none placeholder:text-white/35 focus:border-[#D88ACD]" />
+        </label>
+        <div className="sm:col-span-2 sm:text-center">
+          <button type="submit" className="inline-flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-[#B74DAA] to-[#E9C1E4] px-8 font-sans text-sm font-bold text-[#280C24] transition hover:brightness-110 sm:w-auto">Book Consultation <span className="ml-3" aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </section>
+  </div>
+)}
 
 <section className="w-full overflow-hidden bg-[#03091b] py-4">
   <div className="flex w-max items-center animate-media-scroll">

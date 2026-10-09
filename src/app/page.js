@@ -362,9 +362,9 @@ export default function HomePage() {
   </div>
 
   {/* Doctor Image */}
-  <div className="pointer-events-none relative z-10 mt-6 flex h-[48vh] w-full items-end justify-center md:absolute md:bottom-0 md:right-[18%] md:mt-0 md:h-[47%] md:w-[55%] md:justify-center">
+  <div className="pointer-events-none relative z-10 mt-6 flex h-[60vh] w-full items-end justify-center md:absolute md:bottom-0 md:right-[18%] md:mt-0 md:h-[47%] md:w-[55%] md:justify-center">
 
-    <picture className="relative h-full w-full">
+    <picture className="relative h-[127%] w-full md:h-full md:w-full">
       {/* Mobile image */}
       <source
         media="(max-width: 767px)"

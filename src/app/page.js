@@ -8,7 +8,7 @@ import {
 
 const photos = {
   hero: "/images/geoffrey2.png",
-  hero_mobile: "/images/geoffreymb.png",
+  hero_mobile: "/images/Geoffrey_mobile.png",
   doctor: "/images/second.jpg",
   training: "/images/third.png",
   inject1: "/images/carosule.jpg",
@@ -19,6 +19,7 @@ const photos = {
   face: "/images/fivethsection.png",
   face2: "/images/face.png",
   laser: "/images/lASERS.jpg",
+  laser_mobile: "/images/lasers_mobile.png",
   wellness: "/images/wellness.png",
   skin: "/images/eight.jpg",
   dermat: "/images/dermat.png",
@@ -309,78 +310,62 @@ export default function HomePage() {
      
 {/* Hero */}
 
-<section className="relative isolate flex min-h-[50svh] w-full flex-col items-start overflow-hidden bg-[radial-gradient(ellipse_at_72%_48%,#50133f_0%,#260b26_43%,#170818_100%)] px-4 pt-[105px] pb-0 md:h-screen md:min-h-[720px] md:flex-row md:items-center md:px-[8%] md:pt-[88px] md:pb-0">
+<section className="relative isolate flex min-h-[100svh] w-full flex-col overflow-hidden bg-[radial-gradient(ellipse_at_72%_48%,#50133f_0%,#260b26_43%,#170818_100%)] md:h-screen md:min-h-[720px] md:flex-row md:items-center md:px-[8%] md:pt-[88px]">
 
-  {/* Background overlay */}
-  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#120414]/20 to-transparent" />
+  {/* Mobile background image */}
+  <div className="absolute mt-12 inset-0 -z-20 md:hidden">
+    <img src={photos.hero_mobile} alt="" aria-hidden="true" fetchPriority="high" className="h-full w-full object-cover object-center" />
+  </div>
+
+  {/* Mobile image overlay */}
+  <div className="absolute inset-0 -z-10 bg-black/10 md:hidden" />
+
+  {/* Existing desktop background */}
+  <div className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-[#120414]/20 to-transparent md:block" />
 
   {/* Content */}
-  <div className="relative z-20 w-full py-[20px] px-[20px] md:py-0 md:px-0 md:w-[65%] md:-translate-y-2">
+  <div className="relative z-20 flex min-h-[100svh] w-full flex-col justify-end px-6 pb-20 pt-32 md:min-h-0 md:w-[65%] md:translate-y-[-8px] md:px-0 md:py-0">
 
-    {/* Main Heading */}
+    {/* Main heading */}
     <div className="relative">
       <div className="relative">
-
-        {/* GEOFFREY */}
-        <h1 className="relative z-10 whitespace-nowrap font-zapf text-[clamp(34px,16vw,82px)] leading-[0.95] font-medium tracking-normal uppercase text-white md:text-[131px] md:leading-[124px] ">
+        <h1 className="relative z-10 whitespace-nowrap font-zapf text-[clamp(34px,16vw,82px)] font-medium uppercase leading-[0.95] tracking-normal text-white md:text-[131px] md:leading-[124px]">
           GEOFFREY
         </h1>
 
-        {/* VAZ */}
-        <span className="absolute left-[75%] top-[68%] z-0 whitespace-nowrap font-zapf text-[clamp(34px,12vw,68px)] font-medium leading-[1.13] tracking-normal uppercase bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent md:left-[64%] md:top-[62%] md:text-[clamp(42px,7.16vw,110px)] 3xl:left-[55%] 4xl:left-[49%]">
+        <span className="absolute left-[75%] top-[68%] z-0 whitespace-nowrap bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text font-zapf text-[clamp(34px,12vw,68px)] font-medium uppercase leading-[1.13] tracking-normal text-transparent md:left-[64%] md:top-[62%] md:text-[clamp(42px,7.16vw,110px)] 3xl:left-[55%] 4xl:left-[49%]">
           VAZ
         </span>
-
       </div>
     </div>
 
     {/* Subtitle */}
     <div className="relative z-10 mt-6 md:mt-10">
-
-      <h2 className="font-zapf bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text text-transparent text-[clamp(32px,5vw,44px)] leading-[1.15] md:text-4xl lg:text-[3rem] md:leading-[1.25]">
+      <h2 className="bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text font-zapf text-[clamp(24px,7vw,44px)] leading-[1.15] text-transparent md:text-4xl md:leading-[1.25] lg:text-[3rem]">
         MD Dermatologist
         <br />
-        & Medical Aesthetics Expert
+        &amp; Medical Aesthetics Expert
       </h2>
 
       {/* Experience */}
       <p className="mt-4 font-sans text-[11px] font-bold uppercase tracking-wider text-white sm:text-lg md:mt-6 md:text-base">
-        15+ YEARS <span className="text-[9px] font-medium sm:text-sm">
-          OF EXPERIENCE
-        </span>
+        15+ YEARS <span className="text-[9px] font-medium sm:text-sm">OF EXPERIENCE</span>
       </p>
 
       {/* Consultation */}
-      <a
-        href="#consult"
-        className="mt-4 inline-flex h-[45px] w-[180px] items-center justify-center bg-white px-4 py-3 font-sans text-[11px] font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 sm:h-[57px] sm:w-[280px] sm:px-9 sm:py-5 sm:text-sm"
-      >
+      <a href="#consult" className="mt-4 inline-flex h-[45px] w-[180px] items-center justify-center bg-white px-4 py-3 font-sans text-[11px] font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 sm:h-[57px] sm:w-[280px] sm:px-9 sm:py-5 sm:text-sm">
         Book Consultation
       </a>
-
     </div>
   </div>
 
-  {/* Doctor Image */}
-  <div className="pointer-events-none relative z-10 mt-6 flex h-[60vh] w-full items-end justify-center md:absolute md:bottom-0 md:right-[18%] md:mt-0 md:h-[47%] md:w-[55%] md:justify-center">
-
-    <picture className="relative h-[127%] w-full md:h-full md:w-full">
-      {/* Mobile image */}
-      <source
-        media="(max-width: 767px)"
-        srcSet={photos.hero_mobile}
-      />
-
-      {/* Desktop image */}
-      <img
-        src={photos.hero}
-        alt="Dr. Geoffrey Vaz"
-        fetchPriority="high"
-        className="h-full w-full origin-bottom object-contain object-bottom drop-shadow-2xl md:scale-[2] md:object-contain"
-      />
+  {/* Desktop doctor image — unchanged */}
+  <div className="pointer-events-none absolute bottom-0 right-[18%] z-10 hidden h-[47%] w-[55%] items-end justify-center md:flex">
+    <picture className="relative h-full w-full">
+      <img src={photos.hero} alt="Dr. Geoffrey Vaz" fetchPriority="high" className="h-full w-full origin-bottom scale-[2] object-contain object-bottom drop-shadow-2xl" />
     </picture>
-
   </div>
+
 
 </section>
 
@@ -955,12 +940,15 @@ export default function HomePage() {
 >
   {/* ================= BACKGROUND IMAGE ================= */}
   <div className="absolute inset-0 -z-20">
-    <img
-      src={photos.laser}
-      alt="Laser treatment"
-      className="h-full w-full object-cover object-center"
-      loading="lazy"
-    />
+    <picture className="block h-full w-full">
+      <source media="(max-width: 767px)" srcSet={photos.laser_mobile} />
+      <img
+        src={photos.laser}
+        alt="Laser treatment"
+        className="h-full w-full object-cover object-center"
+        loading="lazy"
+      />
+    </picture>
   </div>
 
   {/* Dark Overlay */}

@@ -329,11 +329,11 @@ export default function HomePage() {
     {/* Main heading */}
     <div className="relative">
       <div className="relative">
-        <h1 className="relative z-10 whitespace-nowrap font-zapf text-[clamp(34px,16vw,82px)] font-medium uppercase leading-[0.95] tracking-normal text-white md:text-[131px] md:leading-[124px]">
+        <h1 className="relative z-10 whitespace-nowrap font-zapf text-[clamp(34px,18vw,82px)] font-medium uppercase leading-[0.95] tracking-normal text-white md:text-[131px] md:leading-[124px]">
           GEOFFREY
         </h1>
 
-        <span className="absolute left-[75%] top-[68%] z-0 whitespace-nowrap bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text font-zapf text-[clamp(34px,12vw,68px)] font-medium uppercase leading-[1.13] tracking-normal text-transparent md:left-[64%] md:top-[62%] md:text-[clamp(42px,7.16vw,110px)] 3xl:left-[55%] 4xl:left-[49%]">
+        <span className="absolute left-[79%] top-[68%] z-0 whitespace-nowrap bg-gradient-to-b from-[#B74DAA] to-[#E9C1E4] bg-clip-text font-zapf text-[clamp(45px,13vw,68px)] font-medium uppercase leading-[1.13] tracking-normal text-transparent md:left-[64%] md:top-[62%] md:text-[clamp(42px,7.16vw,110px)] 3xl:left-[55%] 4xl:left-[49%]">
           VAZ
         </span>
       </div>
@@ -348,12 +348,12 @@ export default function HomePage() {
       </h2>
 
       {/* Experience */}
-      <p className="mt-4 font-sans text-[11px] font-bold uppercase tracking-wider text-white sm:text-lg md:mt-6 md:text-base">
+      <p className="mt-4 font-sans text-[16px] font-bold uppercase tracking-wider text-white sm:text-lg md:mt-6 md:text-base">
         15+ YEARS <span className="text-[9px] font-medium sm:text-sm">OF EXPERIENCE</span>
       </p>
 
       {/* Consultation */}
-      <a href="#consult" className="mt-4 inline-flex h-[45px] w-[180px] items-center justify-center bg-white px-4 py-3 font-sans text-[11px] font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 sm:h-[57px] sm:w-[280px] sm:px-9 sm:py-5 sm:text-sm">
+      <a href="#consult" className="mt-3 inline-flex h-[40px] w-[170px] items-center justify-center bg-white px-3 py-3 font-sans text-[14px] font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 sm:h-[57px] sm:w-[280px] sm:px-9 sm:py-5 sm:text-sm">
         Book Consultation
       </a>
     </div>

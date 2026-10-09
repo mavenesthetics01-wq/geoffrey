@@ -7,6 +7,7 @@ import {
 
 
 const photos = {
+  signatureLogo: "/brands/dr_geoffrey_vaz.svg",
   hero: "/images/geoffrey2.png",
   hero_mobile: "/images/Geoffrey_mobile.png",
   doctor: "/images/second.jpg",
@@ -310,9 +311,14 @@ export default function HomePage() {
       <header className="fixed left-0 top-0 z-50 flex h-[76px] w-full items-center justify-between border-b border-white/15 bg-[#280C24] px-6 md:h-[88px] md:px-[7.5%]">
         <a
           href="#top"
-          className="font-zapf whitespace-nowrap text-2xl italic tracking-wider"
+          aria-label="Dr. Geoffrey Vaz home"
+          className="flex shrink-0 items-center"
         >
-          Dr. Geoffrey Vaz
+          <img
+            src={photos.signatureLogo}
+            alt="Dr. Geoffrey Vaz"
+            className="h-auto w-auto max-w-[210px] object-contain brightness-0 invert md:h-22"
+          />
         </a>
 
         <button
@@ -390,7 +396,7 @@ export default function HomePage() {
       </p>
 
       {/* Consultation */}
-      <button type="button" onClick={() => setConsultOpen(true)} className="mt-3 inline-flex h-[40px] w-[170px] items-center justify-center bg-white px-3 py-3 font-sans text-[14px] font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 sm:h-[57px] sm:w-[280px] sm:px-9 sm:py-5 sm:text-sm">
+      <button type="button" onClick={() => setConsultOpen(true)} className="mt-3 inline-flex h-[40px] w-[135px] items-center justify-center bg-white px-3 py-3 font-sans text-[12px] font-bold uppercase tracking-wide text-[#101326] shadow-lg transition-all duration-300 sm:h-[57px] sm:w-[280px] sm:px-9 sm:py-5 sm:text-sm">
         Book Consultation
       </button>
     </div>
